@@ -112,7 +112,7 @@ rep = 1
 
 n = names(train_)
 f = as.formula(paste("loss ~", paste(n[!n %in% "loss"], collapse = " + ")))
-output.nn = neuralnet(f,data=train_,hidden=hidden,linear.output=T,rep=rep)
+output.nn = neuralnet(f,data=train_[1:5000,],hidden=hidden,linear.output=T,rep=rep) # first 5k rows
 
 # predictions on new data
 predictions = compute(output.nn, test_[,1:30])$net.result
