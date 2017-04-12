@@ -121,7 +121,7 @@ predictions = compute(output.nn, test_[,1:30])$net.result
 
 ################################################################
 # ASSESSMENT
-################################
+################################################################
 
 plot(test_$loss, predictions, xlab="original",ylab="predicted",bty="n",pch=16, col="orange");abline(0,1,lty=2)
 MSE = sum((predictions - test_$loss)^2)/nrow(test_)
